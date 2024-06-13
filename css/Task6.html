@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task6</title>
+    <style>
+        .container{
+            width: 50%;
+            margin-left: 38%;
+        }
+        
+        #button{
+            background-color: rgb(21, 156, 21);
+            border: 1px solid rgb(21, 156, 21);;
+            text-align: center;
+            width: 50%;
+            color: white;
+        }
+
+        #cancel{
+            background-color: red;
+            color: white;
+            border: 1px solid red;
+            border-radius: 10%;
+            padding: 0.3rem;
+        }
+        #last{
+            width: 50%;
+            padding: 0.2rem;
+            background-color: rgb(169, 166, 163);
+        }
+        #pass{
+            text-align: end;
+            color: black;
+            display: block;
+        }
+        #img{
+            width: 15%;
+            margin-left: 15%;
+        }
+        #username{
+            border: 1px solid rgb(192, 187, 187);
+        }
+        #password{
+            border: 1px solid rgb(192, 187, 187);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./img.png" alt="error" id="img">
+        <form>
+            <strong><label for="username">Username</label></strong><br>
+            <input type="text" id="username" placeholder="Enter Username"><br><br>
+            <strong><label for="password">Password</label></strong><br>
+            <input type="text" id="password" placeholder="Enter Password"><br><br>
+            <button id="button">Login</button><br><br>
+            <input type="checkbox" id="rem">
+            <label for="rem">Remember me</label><br><br>
+            <div id="last">
+                <button id="cancel">Cancel</button>
+                <a href="password" id="pass"> Forget password?</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
