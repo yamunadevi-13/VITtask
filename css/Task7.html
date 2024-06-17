@@ -4,113 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 7</title>
-    <style>  
-        form{
-            background-color: rgb(129, 14, 14);
-            text-align: left;
+    <style>
+        table, th, tr, td{
+            border:1px solid rgb(173, 19, 65);
+            background-color: rgb(173, 19, 65);
+            margin-left: 35%;
+            padding: 0.5rem;
             color: white;
-            padding:50px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        body{
-            background-color: brown;
-            margin: 2%;
-        }
-        #name{
-            margin: 10px 50px;
+            width: 50%;
+            height: 25px;
+            padding-left: 2rem;
         }
 
-        #email{
-            margin: 15px 50px;
+        body{
+            background-color: rgb(132, 5, 5);
+            padding: 7rem;
+            width: 80%;
         }
-        #pass{
-            margin: 15px 50px;
-        }
-        #phe{
-            margin: 15px 50px;
-        }
-        #gender{
-            margin: 15px 50px;
-        }
+
         #lang{
-            margin: 15px 50px;
-        }
-        #zip{
-            margin: 15px 50px;
-        }
-        #about{
-            margin: 15px 50px;
-        }
-        #reg{
-            margin: 15px 50px;
-            text-align: center;
+            background-color: rgb(196, 189, 189);
         }
 
         #button{
-            padding: 10px;
-            width: 500px;
-            font-size: large;
-            font-weight: 800;
+            text-align: center;
+            width:90%;
+            padding: 0.4rem;
+            font-size: larger;
+            font-weight: bold;
         }
-        input{
-            text-align: left;
-            
+
+        textarea{
+            color: gray;
         }
-        
+
     </style>
 </head>
 <body>
-    <div>
-        <form>
-            <div id="name">
-            <label for="name">Name:</label>
-            <input type="text" id="name" value="your name">
-        </div>
-        <div id="email">
-            <label for="email">Email:</label>
-            <input type="text" id="email" value="your email">
-        </div>
-            <div id="pass">
-            <label for="password">Password:</label>
-            <input type="text" id="password">
-        </div>
-            <div id="phe">
-            <label for="phe">Phone Number:</label>
-            <input type="text" id="phe">
-        </div>
-            <div id="gender">
-            <label for="gender">Gender:</label>
-            <label for="male">Male:</label>
-            <input type="radio" id="male">
-            <label for="female">Female:</label>
-            <input type="radio" id="female">
-            <label for="other">Other:</label>
-            <input type="radio" id="other">
-        </div>
-            <div id="lang">
-            <label for="lang">language</label>
-            <select id="lang">
-                <option>Select language</option>
-                <option>Hindi</option>
-                <option>Tamil</option>
-                <option>English</option>
-                <option>Latin</option>
-                <option>Kanada</option>
-                <option>Telugu</option>
-            </select>
-        </div>
-        <div id="zip">
-            <label for="zip">Zip Code:</label>
-            <input type=" text" id="zip">
-        </div>
-            <div id="about">
-            <label for="about">About</label>
-            <textarea>Write about yorself..</textarea>
-    </div>
-            <div id="reg">
-            <button id="button" value="button">Register</button>
-        </div>
+    <table>
+        <form class="container">
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td><input type="text" id="name" placeholder="your name"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="text" id="email" placeholder="your email"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="text" id="password"></td>
+            </tr>
+            <tr>
+                <td><label for="phe">Phone Number:</label></td>
+                <td><input type="text" id="phe"></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender:</label></td>
+                <td>
+                    <label for="male">Male:</label>
+                    <input type="radio" id="male">
+                    <label for="female">Female:</label>
+                    <input type="radio" id="female">
+                    <label for="other">Other:</label>
+                    <input type="radio" id="other">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="lang">language</label></td>
+                <td>
+                    <select id="lang">
+                        <option>Select language</option>
+                        <option>Hindi</option>
+                        <option>Tamil</option>
+                        <option>English</option>
+                        <option>Latin</option>
+                        <option>Kanada</option>
+                        <option>Telugu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="zip">Zip Code:</label></td>
+                <td><input type=" text" id="zip"></td>
+            </tr>
+            <tr>
+                <td><label for="about">About:</label></td>
+                <td><textarea>Write about yorself..</textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="button">Register</button></td>
+            </tr>
         </form>
-    </div>
+    </table>
 </body>
 </html>
+
+
+            
+            
+       
