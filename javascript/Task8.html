@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            background-color:pink;
+        }
+        table,tr,td{
+            margin-left: 34%;
+        }
+        #bold{
+            font-weight: bold;
+            text-align: end;
+        }
+        #button{
+            text-align: center;
+        }
+        button{
+          background-color: red;
+          color: white;
+          border-radius: 20px;
+          width: 80px;
+        }
+        h2{
+            color: blue;
+            text-align: center;
+        }
+        #login{
+          text-align: end;
+        }
+        .error{
+  
+          color: red;
+          padding-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <table>
+        <form id="registrationForm">
+                <tr>
+                    <td id="bold"><label for="firstName">First Name</label></td>
+                    <td><input type="text" id="firstName" name="firstName" style="width: 98%;"></td>
+                    <td><div class="error" id="firstNameError"></div></td>
+                </tr>
+                <tr>
+                    <td id="bold"><label for="lastName">Last Name</label></td>
+                    <td><input type="text" id="lastName" name="lastName" style="width: 98%;"></td>
+                    <td><div class="error" id="lastNameError"></div></td>
+                </tr>
+                <tr>
+                    <td id="bold"><label for="email">Email</label></td>
+                    <td><input type="email" id="email" name="email" style="width: 98%;"></td>
+                    <td><div class="error" id="emailError"></div></td>
+                </tr>
+                <tr>
+                    <td id="bold"><label for="password">Password</label></td>
+                    <td><input type="password" id="password" name="password" style="width: 98%;"></td>
+                    <td><div class="error" id="passwordError"></div></td>
+                </tr>
+                <tr>
+                    <td id="bold"><label for="confirmPassword">Re-enter Password</label></td>
+                    <td><input type="password" id="confirmPassword" name="confirmPassword" style="width: 98%;"></td>
+                    <td><div class="error" id="confirmPasswordError"></div></td>
+                </tr>
+                <tr>
+                    <td id="bold" rowspan="2"><label>Gender</label>
+                    <td><input type="radio" id="male" name="gender" value="male"> Male</td>
+                <tr>
+                    <td><input type="radio" id="female" name="gender" value="female"> Female</td>
+                </tr>
+                <tr>
+                    <td id="bold"><label for="age">Age</label></td>
+                    <td><input type="number" id="age" name="age" style="width: 98%;"></td>
+                    <td><div class="error" id="ageError"></div></td>
+                </tr>
+                <tr>
+                    <td id="bold"><label for="phoneNumber">Phone Number</label></td>
+                    <td><input type="tel" id="phoneNumber" name="phoneNumber" style="width: 98%;"></td>
+                    <td><div class="error" id="phoneNumberError"></div></td>
+                </tr>
+                <tr>
+                    <td id="bold"><label for="address">Address</label></td>
+                    <td><textarea id="address" name="address" cols="30" rows="10" style="width: 98%;"></textarea></td>
+                    <td><div class="error" id="addressError"></div></td>
+                </tr>
+                <tr>
+                    <td id="bold"><label for="state">State</label></td>
+                    <td><input type="text" id="state" name="state" style="width: 98%;"></td>
+                    <td><div class="error" id="stateError"></div></td>
+                </tr>
+                <tr>
+                    <td id="bold"><label for="country">Country</label></td>
+                    <td><select id="country" name="country">
+                            <option value="">Choose your country</option>
+                            <option value="india">India</option>
+                            <option value="china">China</option>
+                            <option value="usa">USA</option>
+                            <option value="ireland">Ireland</option>
+                        </select></td>
+                    <td><div class="error" id="countryError"></div></td>
+                </tr>
+                <tr>
+                    <td id="bold"><label>Languages known</label></td>
+                    <td >
+                        <input type="checkbox" id="langugae1" name="langugae1" value="English">
+                        <label for="langugae1">English</label>
+                        
+                        <input type="checkbox" id="langugae2" name="langugae2" value="Kannada">
+                        <label for="langugae2">Kannada</label>
+                        
+                        <input type="checkbox" id="langugae3" name="langugae3" value="Hindi">
+                        <label for="langugae3">Hindi</label>
+                        
+                        <input type="checkbox" id="langugae4" name="langugae4" value="Telugu">
+                        <label for="langugae4">Telugu</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="checkbox" id="declaration" name="declaration"> Hereby I declare all the given details are true</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="website">
+                            <div id="login"> Log in to <a href="Ethus">Ethnus</a>website</div>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center;"><button type="submit" >Register</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    let isValid = true;
+
+    // Clear previous errors
+    document.querySelectorAll('.error').forEach(function (errorElem) {
+        errorElem.textContent = '';
+    });
+
+    // Validate first name
+    const firstName = document.getElementById('firstName').value;
+    if (!firstName) {
+        document.getElementById('firstNameError').textContent = 'POOR';
+        isValid = false;
+    }
+
+    // Validate last name
+    const lastName = document.getElementById('lastName').value;
+    if (!lastName) {
+        document.getElementById('lastNameError').textContent = 'POOR';
+        isValid = false;
+    }
+
+    // Validate email
+    const email = document.getElementById('email').value;
+    if (!email) {
+        document.getElementById('emailError').textContent = 'POOR';
+        isValid = false;
+    }
+
+    // Validate password
+    const password = document.getElementById('password').value;
+    if (!password) {
+        document.getElementById('passwordError').textContent = 'POOR';
+        isValid = false;
+    }
+
+    // Validate confirm password
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    if (!confirmPassword || password !== confirmPassword) {
+        document.getElementById('confirmPasswordError').textContent = 'POOR OR MISMATCH';
+        isValid = false;
+    }
+    // Validate age
+    const age = document.getElementById('age').value;
+    if (!age) {
+        document.getElementById('ageError').textContent = 'POOR';
+        isValid = false;
+    }
+
+    // Validate phone number
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    if (!phoneNumber) {
+        document.getElementById('phoneNumberError').textContent = 'POOR';
+        isValid = false;
+    }
+
+    // Validate address
+    const address = document.getElementById('address').value;
+    if (!address) {
+        document.getElementById('addressError').textContent = 'POOR';
+        isValid = false;
+    }
+
+    // Validate state
+    const state = document.getElementById('state').value;
+    if (!state) {
+        document.getElementById('stateError').textContent = 'POOR';
+        isValid = false;
+    }
+
+    // Validate country
+    const country = document.getElementById('country').value;
+    if (!country) {
+        document.getElementById('countryError').textContent = 'POOR';
+        isValid = false;
+    }
+    // Submit form if valid
+    if (isValid) {
+        alert('Form submitted successfully!');
+        // You can add form submission code here (e.g., using AJAX)
+    }
+});
+
+    </script>
+</body>
+</html>

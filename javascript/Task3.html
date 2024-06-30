@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 3</title>
+    <style>
+        button:hover{
+            border: 2px solid rgb(114, 204, 239);
+        }
+    </style>
+</head>
+<body>
+
+    <label for="num1">Enter first number:</label>
+    <input type="number" id="num1"><br><br>
+
+    <label for="num2">Enter second number:</label>
+    <input type="number" id="num2"><br><br>
+
+    <button onclick="Multiply()">Multiply</button>
+    <button onclick="Divide()">Divide</button>
+
+
+    <p>The Results Is:</p>
+    <p id="multiplicationResult"></p>
+    <p id="divisionResult"></p>
+
+    <script>
+        function Multiply() {
+
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            var multiplication = num1 * num2;
+            document.getElementById('multiplicationResult').innerText =  multiplication;
+        }
+
+        function Divide() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            var division = num1 / num2;
+
+            document.getElementById('divisionResult').innerText =  + division;
+        }
+    </script>
+</body>
+</html>
+

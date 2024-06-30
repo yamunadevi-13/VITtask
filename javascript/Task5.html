@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            width: 500px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        input,textarea{
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form id="contactForm">
+        <table>
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td><input type="text" id="name" name="name"></td>
+                <td><div class="error" id="nameError">This field is required</div></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" name="email"></td>
+                <td><div class="error" id="emailError">A valid email address is required</div></td>
+            </tr>
+            <tr>
+                <td><label for="website">Website:</label></td>
+                <td><input type="url" id="website" name="website"></td>
+                <td><div class="error" id="websiteError">A valid URL is required</div></td>
+            </tr>
+            <tr>
+                <td><label for="message">Message:</label></td>
+                <td><textarea id="message" name="message" cols="22" rows="6"></textarea></td>
+                <td><div class="error" id="messageError">This field is required</div></td>
+            </tr>
+            <tr>
+                <td colspan="3"><button type="submit" class="submit-btn">Submit</button></td>
+            </tr>
+        </table>
+        
+    </form>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let isValid = true;
+
+    // Clear previous errors
+    document.querySelectorAll('.error').forEach(function(errorElem) {
+        errorElem.style.display = 'none';
+    });
+    document.querySelectorAll('input, textarea').forEach(function(inputElem) {
+        inputElem.classList.remove('error-border');
+    });
+
+    // Validate name
+    const name = document.getElementById('name').value;
+    if (!name) {
+        document.getElementById('nameError').style.display = 'block';
+        document.getElementById('name').classList.add('error-border');
+        isValid = false;
+    }
+
+    const email = document.getElementById('email').value;
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email || !emailPattern.test(email)) {
+        document.getElementById('emailError').style.display = 'block';
+        document.getElementById('email').classList.add('error-border');
+        isValid = false;
+    }
+
+    const website = document.getElementById('website').value;
+    const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+    if (!website || !urlPattern.test(website)) {
+        document.getElementById('websiteError').style.display = 'block';
+        document.getElementById('website').classList.add('error-border');
+        isValid = false;
+    }
+
+    const message = document.getElementById('message').value;
+    if (!message) {
+        document.getElementById('messageError').style.display = 'block';
+        document.getElementById('message').classList.add('error-border');
+        isValid = false;
+    }
+
+    if (isValid) {
+        alert('Form submitted successfully!');
+    }
+});
+
+    </script>
+</body>
+</html>

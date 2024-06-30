@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <button onClick="date()">show date</button>
+    <p id="date"></p>
+    <button onClick="time()">show Time</button>
+    <p id="time"></p>
+
+    <script>
+        function date(){
+            const d = new Date();
+            const date = d.toDateString();
+            document.getElementById('date').innerText = date;
+        }
+
+        function time(){
+            const d = new Date();
+            document.getElementById('time').innerText = d;
+
+        }
+    </script>
+    
+</body>
+</html>
